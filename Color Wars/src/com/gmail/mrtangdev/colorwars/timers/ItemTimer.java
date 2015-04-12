@@ -14,9 +14,6 @@ public class ItemTimer extends BukkitRunnable {
 	    GameItems.clearPlayer(player);
 	    GameItems.giveItems(player);
 	}
-	
     }
-
-    
 
 }

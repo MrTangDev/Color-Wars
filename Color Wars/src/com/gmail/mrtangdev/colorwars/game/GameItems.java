@@ -25,16 +25,10 @@ public class GameItems {
 	for (PotionEffect effect : player.getActivePotionEffects()) {
 	    player.removePotionEffect(effect.getType());
 	}
-
     }
 
     public static void giveItems(Player player) {
-
-	ItemStack item = new ItemStack(Material.INK_SACK, 1, (byte) rand.nextInt(itemstack.length));
-
-	player.getInventory().addItem(item);
-
-
+	player.getInventory().addItem(new ItemStack(Material.INK_SACK, 1, (byte) rand.nextInt(itemstack.length)));
 	player.getInventory().setHelmet(new ItemStack(Material.WOOL, 1, (byte) rand.nextInt(itemstack.length)));
     }
 

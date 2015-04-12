@@ -25,5 +25,4 @@ public class GraceTimer extends BukkitRunnable {
 	time--;
     }
 
-
 }

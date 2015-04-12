@@ -12,18 +12,7 @@ import com.gmail.mrtangdev.colorwars.listeners.GeneralListeners;
 import com.gmail.mrtangdev.colorwars.listeners.PlayerListeners;
 
 public class ColorWars extends JavaPlugin {
-/*
- * Color Wars
- * No teams, 16 max, minimum 4
- * Objective: Get 25 kills
- * When starting, you become a random color, it will change every 2 seconds
- * To kill another player you must use the random color you have 
- * If you can't, run the fuck away
- * 1 shot 1 kill
- * 5, 10 and 15 kill bonus: 1 minute Speed I, jump boost II and speed II
- * Configuration: Player limit and kill objective and wait time
- * 
- */
+
     private static ColorWars instance;
     private static World world;
     
