@@ -1,0 +1,4 @@
+max-players: 16
+min-players: 4
+kill-amount: 25
+wait-time: 30
