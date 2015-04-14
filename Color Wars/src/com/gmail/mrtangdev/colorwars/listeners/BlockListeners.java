@@ -14,9 +14,6 @@ import com.gmail.mrtangdev.colorwars.utils.Chat;
 
 public class BlockListeners implements Listener {
 
-    public Map<String, Integer> playerKills = new HashMap<>();
-    public Map<String, Integer> killStreak = new HashMap<>();
-
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
 	Player player = event.getPlayer();
