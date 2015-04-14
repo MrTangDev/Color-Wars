@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 
 public class Chat {
 
-    private static final String TAG = ChatColor.GOLD + "[!] " + ChatColor.GRAY;
+    private static final String TAG = ChatColor.GREEN + "[Color Wars] " + ChatColor.GRAY;
     
     public static void message(CommandSender sender, String msg) {
 	sender.sendMessage(TAG + msg);

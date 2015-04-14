@@ -9,11 +9,11 @@ import org.bukkit.potion.PotionEffect;
 
 public class GameItems {
 
-    public static Random rand = new Random();
+    private static Random rand = new Random();
 
-    public static byte[] itemstack = new byte[] {
-	1, 2, 3, 4, 5, 14, 8, 9, 11
-	//red green brown blue purple orange gray pink yellow
+    private static byte[] dyeStack = new byte[] {
+	1, 2, 3, 4, 5, 8, 11
+	//red green brown blue purple gray yellow
     };
 
 
@@ -28,8 +28,12 @@ public class GameItems {
     }
 
     public static void giveItems(Player player) {
-	player.getInventory().addItem(new ItemStack(Material.INK_SACK, 1, (byte) rand.nextInt(itemstack.length)));
-	player.getInventory().setHelmet(new ItemStack(Material.WOOL, 1, (byte) rand.nextInt(itemstack.length)));
+	player.getInventory().clear();
+	player.getInventory().setArmorContents(null);
+	
+	player.getInventory().addItem(new ItemStack(Material.INK_SACK, 1, (byte) dyeStack[rand.nextInt(dyeStack.length)]));
+	player.getInventory().setHelmet(new ItemStack(Material.WOOL, 1, (byte) dyeStack[rand.nextInt(dyeStack.length)]));
+	player.updateInventory();
     }
 
 }

@@ -18,9 +18,10 @@ public class GameHandler {
 	
 	for (Player player : Bukkit.getOnlinePlayers()) {
 	    if (player.getGameMode() != GameMode.CREATIVE) {
-		player.teleport(ColorWars.getWorld().getSpawnLocation());
+		player.teleport(ColorWars.getWorld().getSpawnLocation().add(0, 5, 0));
+		GameItems.clearPlayer(player);
 		Chat.message(player, "You are invincible for 10 seconds.");
-		new ItemTimer().runTaskTimer(ColorWars.getInstance(), 200, 40);
+		new ItemTimer().runTaskTimer(ColorWars.getInstance(), 220, 40);
 	    }
 	}
     }

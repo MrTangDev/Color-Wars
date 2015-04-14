@@ -1,3 +1,5 @@
 name: ColorWars
-version: 1.0
+version: 1337
 main: com.gmail.mrtangdev.colorwars.ColorWars
+description: hopefully a working minigame
+author: MrTang

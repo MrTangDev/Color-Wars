@@ -2,13 +2,13 @@ package com.gmail.mrtangdev.colorwars.timers;
 
 import org.bukkit.scheduler.BukkitRunnable;
 
-import com.gmail.mrtangdev.colorwars.ColorWars;
 import com.gmail.mrtangdev.colorwars.game.GameHandler;
 import com.gmail.mrtangdev.colorwars.utils.Chat;
+import com.gmail.mrtangdev.colorwars.utils.Config;
 
 public class WaitTimer extends BukkitRunnable {
 
-    public int countdown = ColorWars.waitTime;
+    private int countdown = Config.getWaitTime();
 
     @Override
     public void run() {
@@ -17,7 +17,7 @@ public class WaitTimer extends BukkitRunnable {
 
 	    GameHandler.startGame();
 	    this.cancel();
-
+	    return;
 	}
 
 	if (countdown % 60 == 0) {

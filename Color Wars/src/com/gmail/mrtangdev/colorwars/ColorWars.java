@@ -10,17 +10,13 @@ import com.gmail.mrtangdev.colorwars.listeners.BlockListeners;
 import com.gmail.mrtangdev.colorwars.listeners.EntityListeners;
 import com.gmail.mrtangdev.colorwars.listeners.GeneralListeners;
 import com.gmail.mrtangdev.colorwars.listeners.PlayerListeners;
+import com.gmail.mrtangdev.colorwars.utils.Config;
 
 public class ColorWars extends JavaPlugin {
 
     private static ColorWars instance;
+    
     private static World world;
-    
-    public static int minPlayers = 4;
-    public static int maxPlayers = 16;
-    public static int waitTime = 30;
-    public static int killAmount = 25;
-    
     
     @Override
     public void onEnable() {
@@ -31,7 +27,7 @@ public class ColorWars extends JavaPlugin {
 	registerListeners();
 	GameState.setState(GameState.WAITING);
 	world = Bukkit.getWorld("world");
-	world.setSpawnLocation(0, world.getHighestBlockYAt(world.getSpawnLocation()) + 5, 0);
+	world.setSpawnLocation(0, 100, 0);
     }
     
     @Override
@@ -46,10 +42,10 @@ public class ColorWars extends JavaPlugin {
 	getConfig().options().copyDefaults(true);
 	saveConfig();
 
-	minPlayers = getConfig().getInt("max-players");
-	maxPlayers = getConfig().getInt("min-players");
-	waitTime = getConfig().getInt("wait-time");
-	killAmount = getConfig().getInt("kill-amount");
+	Config.setMaximumPlayers(getConfig().getInt("max-players"));
+	Config.setMinimumPlayers(getConfig().getInt("min-players"));
+	Config.setWaitTime(getConfig().getInt("wait-time"));
+	Config.setKillAmount(getConfig().getInt("kill-amount"));
     }
     
     private void registerListeners() {

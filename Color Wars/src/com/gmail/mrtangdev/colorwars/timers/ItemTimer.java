@@ -5,14 +5,19 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import com.gmail.mrtangdev.colorwars.game.GameItems;
+import com.gmail.mrtangdev.colorwars.game.GameState;
 
 public class ItemTimer extends BukkitRunnable {
 
     @Override
     public void run() {
-	for (Player player : Bukkit.getOnlinePlayers()) {
-	    GameItems.clearPlayer(player);
-	    GameItems.giveItems(player);
+	if (GameState.getState() == GameState.STARTED) {
+	    for (Player player : Bukkit.getOnlinePlayers()) {
+		GameItems.giveItems(player);
+	    }
+	} else {
+	    this.cancel();
+	    return;
 	}
     }
 
