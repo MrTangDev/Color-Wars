@@ -1,8 +1,5 @@
 package com.gmail.mrtangdev.colorwars.listeners;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
